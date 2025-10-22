@@ -6,6 +6,8 @@ import { provideState, provideStore } from '@ngrx/store';
 import { provideHttpClient } from '@angular/common/http';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { studentsReducer } from './state/students-reducer';
+import { provideEffects } from '@ngrx/effects';
+import { StudentsRecordsEffects } from './state/students-records.effects';
 
 
 export const appConfig: ApplicationConfig = {
@@ -16,9 +18,10 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideStore(),
     provideState({
-      name: 'students',
-      reducer: studentsReducer
+        name: 'students',
+        reducer: studentsReducer
     }),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideEffects(StudentsRecordsEffects)
 ]
 };

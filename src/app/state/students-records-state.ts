@@ -7,8 +7,6 @@ export interface StudentsRecordsState extends EntityState<StudentsRecords> {
 
 export const studentsAdapter: EntityAdapter<StudentsRecords> =
   createEntityAdapter<StudentsRecords>();
-
-
   
 export const initialState: StudentsRecordsState = studentsAdapter.getInitialState({
   selectedStudentId: null

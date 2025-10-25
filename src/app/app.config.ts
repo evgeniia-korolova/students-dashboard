@@ -1,12 +1,13 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
-import { provideHttpClient } from '@angular/common/http';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { studentsReducer } from './state/students-reducer';
 import { provideEffects } from '@ngrx/effects';
+import { provideRouterStore, routerReducer } from "@ngrx/router-store";
+import { studentsReducer } from './state/students-reducer';
 import { StudentsRecordsEffects } from './state/students-records.effects';
 
 
@@ -16,12 +17,15 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(routes),
     provideHttpClient(),
-    provideStore(),
+    provideStore({
+      route: routerReducer
+    }),
     provideState({
         name: 'students',
         reducer: studentsReducer
     }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideEffects(StudentsRecordsEffects)
+    provideEffects(StudentsRecordsEffects),
+    provideRouterStore()
 ]
 };

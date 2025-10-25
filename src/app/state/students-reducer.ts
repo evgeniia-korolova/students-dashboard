@@ -1,5 +1,4 @@
 import { createReducer, on } from '@ngrx/store';
-import { StudentsRecords } from './students-records.model';
 import * as Actions from './students-records.actions';
 import { initialState, studentsAdapter } from './students-records-state';
 
@@ -8,6 +7,6 @@ import { initialState, studentsAdapter } from './students-records-state';
 export const studentsReducer = createReducer(
   initialState,
   on(Actions.callStudentsRecordsApiSuccess, (state, { payload }) =>
-    studentsAdapter.setAll(payload, state),
+    studentsAdapter.addMany(payload, state),
   ),
 );

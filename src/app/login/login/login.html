@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="container__login-box">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="./ngrx.svg" style="height: 240px; border-radius: 50%; padding: 16px;"/>
+            <h2>Learn NGRX classic</h2>            
+            <p>Implemented Angular Material with Material UI</p>
+        </div>
+        <div>
+            <mat-card>
+                <h2>Login</h2>
+                <form [formGroup]="loginForm">
+                    <mat-form-field class="full-width">
+                        <mat-label>Username</mat-label>
+                        <input matInput type="text" formControlName="username">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password">
+                    </mat-form-field>
+                </form>
+                <button mat-raised-button color="primary" (click)="onLoginUser()">Login</button>
+            </mat-card>
+        </div>
+    </div>
+</div>

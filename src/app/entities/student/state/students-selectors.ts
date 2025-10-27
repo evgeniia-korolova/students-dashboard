@@ -1,5 +1,4 @@
-import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { StudentsRecords } from "./students-records.model";
+import { createSelector } from "@ngrx/store";
 import { studentsAdapter, StudentsRecordsState } from "./students-records-state";
 
 

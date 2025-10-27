@@ -1,4 +1,5 @@
-import { StudentsRecords } from "../../state/students-records.model";
+import { StudentsRecords } from "./students-records.model";
+
 
 export interface DbJson {
     login: any; 

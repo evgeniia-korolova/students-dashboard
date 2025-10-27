@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { ContactUs } from '../contact-us/contact-us';
-import { StudentsTable } from '../students-table/students-table/students-table';
-import { StudentEntry } from '../student-entry/student-entry';
+import { ContactUs } from '../../features/contact-us/contact-us';
+import { StudentEntry } from '../../features/student-entry/student-entry';
+import { StudentsTable } from '../../features/students-table/students-table';
+
 
 @Component({
   selector: 'app-dashboard',

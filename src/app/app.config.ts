@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection, isDevMode } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection, isDevMode, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 
@@ -9,6 +9,7 @@ import { provideEffects } from '@ngrx/effects';
 import { provideRouterStore, routerReducer } from "@ngrx/router-store";
 import { studentsReducer } from './state/students-reducer';
 import { StudentsRecordsEffects } from './state/students-records.effects';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 export const appConfig: ApplicationConfig = {
@@ -26,6 +27,7 @@ export const appConfig: ApplicationConfig = {
     }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideEffects(StudentsRecordsEffects),
-    provideRouterStore()
+    provideRouterStore(),
+    importProvidersFrom(MatNativeDateModule),
 ]
 };

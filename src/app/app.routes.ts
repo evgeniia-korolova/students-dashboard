@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Login } from './login/login/login';
-import { StudentsTable } from './students-table/students-table/students-table';
+import { authGuard } from './guards/auth-guard-guard';
 
 export const routes: Routes = [
     {
@@ -14,6 +14,7 @@ export const routes: Routes = [
     },
     {
         path: 'dashboard',
-        component: StudentsTable
+        loadComponent: () => import('./dashboard/dashboard').then((c) => c.Dashboard),        
+        canMatch: [authGuard],
     }
 ];

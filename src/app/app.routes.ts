@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
-import { Login } from './login/login/login';
-import { authGuard } from './guards/auth-guard-guard';
+
+import { authGuard } from './core/guards/auth-guard-guard';
+import { Login } from './pages/login/login';
+
 
 export const routes: Routes = [
     {
@@ -14,7 +16,7 @@ export const routes: Routes = [
     },
     {
         path: 'dashboard',
-        loadComponent: () => import('./dashboard/dashboard').then((c) => c.Dashboard),        
+        loadComponent: () => import('./pages/dashboard/dashboard').then((c) => c.Dashboard),        
         canMatch: [authGuard],
     }
 ];

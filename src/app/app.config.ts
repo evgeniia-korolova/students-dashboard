@@ -7,8 +7,9 @@ import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
 import { provideRouterStore, routerReducer } from "@ngrx/router-store";
-import { studentsReducer } from './state/students-reducer';
-import { StudentsRecordsEffects } from './state/students-records.effects';
+import { studentsReducer } from './entities/student/state/students-reducer';
+import { StudentsRecordsEffects } from './entities/student/state/students-records.effects';
+// import { StudentsRecordsEffects } from './state/students-records.effects';
 import { MatNativeDateModule } from '@angular/material/core';
 
 

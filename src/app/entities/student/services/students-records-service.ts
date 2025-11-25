@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { StudentsRecords } from '../state/students-records.model';
 import { map, Observable } from 'rxjs';
 import { DbJson } from '../models/db-json.model';
+import { StudentsRecords } from '../models/students-records.model';
 
 
 

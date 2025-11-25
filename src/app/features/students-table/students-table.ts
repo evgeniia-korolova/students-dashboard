@@ -2,12 +2,13 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { MatTableModule } from '@angular/material/table';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { StudentsRecords } from '../../state/students-records.model';
-import { AppState, selectAllStudents, selectStudentById } from '../../state/students-selectors';
-import * as Actions from '../../state/students-records.actions';
+
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { AppState, selectAllStudents, selectStudentById } from '../../entities/student/state/students-selectors';
+import { StudentsRecords } from '../../entities/student/models/students-records.model';
+import * as Actions from '../../entities/student/state/students-records.actions';
 
 @Component({
   selector: 'app-students-table',

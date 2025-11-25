@@ -3,6 +3,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ContactUs } from '../../features/contact-us/contact-us';
 import { StudentEntry } from '../../features/student-entry/student-entry';
 import { StudentsTable } from '../../features/students-table/students-table';
+import { Header } from "./header/header";
 
 
 @Component({
@@ -10,7 +11,7 @@ import { StudentsTable } from '../../features/students-table/students-table';
   imports: [MatTabsModule,
     StudentsTable,
     StudentEntry,
-    ContactUs],
+    ContactUs, Header],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })
